@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETFLEX</title>
+    <style>
+        * {
+            font-family: 'popins' sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .main {
+            background-position: center center;
+            background-size: max(1000px, 100vw);
+            background-image: url("Screenshot\ 2024-03-07\ 221008.png");
+            height: 70vh;
+
+            position: relative;
+            background-repeat: no-repeat;
+        }
+
+        nav {
+            max-width: 60vw;
+            max-width: 80vw;
+            justify-content: space-between;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            height: 100px;
+        }
+
+        nav img {
+            color: red;
+            width: 150px;
+            position: relative;
+            /* z-index: 10; */
+        }
+
+        nav button {
+            position: relative;
+            z-index: 10;
+        }
+
+        .main .box {
+            height: 60vh;
+            width: 100%;
+            opacity: 0.69;
+            background-color: black;
+            position: absolute;
+            top: 0;
+
+        }
+
+        .hero {
+            font-family: 'martel sans', sans-serif;
+
+            height: calc(100%-100px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            padding: 0 23px;
+            position: relative;
+            gap: 30px;
+        }
+
+        .hero> :nth-child(1) {
+            font-weight: bolder;
+            font-size: 48px;
+            text-align: center;
+        }
+
+        .hero> :nth-child(2) {
+            font-family: "popins" sans-serif;
+            font-weight: bolder;
+            /* font-weight: 700; */
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .hero> :nth-child(3) {
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .sepration {
+            height: 7px;
+            background-color: rgb(55, 52, 52);
+            position: relative;
+            z-index: 20;
+        }
+
+        .btn {
+            padding: 3px 8px;
+            /* font-weight: bold; */
+            font-family: "popins", sans-serif;
+            font-weight: 4oo;
+            background-color: rgba(248, 243, 243, 0.021);
+            color: white;
+            border: 1px solid white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-red {
+            background-color: red;
+            color: white;
+            padding: 3px 24px;
+            font-size: 20px;
+            border-radius: 4px;
+            font-weight: 400;
+        }
+
+        .btn-red-sn {
+            background-color: red;
+            color: white;
+        }
+
+        .main input {
+            padding: 7px 101px 8px 14px;
+            font-weight: 900;
+            color: white;
+            font-size: 12px;
+            border-radius: 4px;
+            background-color: rgba(23, 23, 23, 0.7);
+            border: 1px solid rgba(23, 23, 23, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .first {
+            display: flex;
+            justify-content: center;
+            max-width: 70vw;
+            margin: auto;
+            color: white;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .secimg {
+            position: relative;
+        }
+
+        .secimg img {
+            /* width: 305px;
+            z-index: 10; */
+            width: 30vw;
+            position: relative;
+        }
+
+        .secimg video {
+            position: absolute;
+            top: 45px;
+            right: 40;
+
+            /* height: 225px; */
+            width: 406px;
+
+            /* width: 555px; */
+            border: 2px solid rgb(104, 85, 85);
+
+        }
+
+        section.first>div {
+            display: flex;
+            flex-direction: column;
+            padding: 34px 0;
+        }
+
+        section.first>div :nth-child(1) {
+            font-size: 48px;
+            font-weight: bolder;
+        }
+
+        section.first>div:nth-child(2) {
+            font-size: 24px;
+
+        }
+
+        .feq h2 {
+            text-align: center;
+            font-size: 48px;
+        }
+
+        .feq {
+            background-color: black;
+            color: white;
+            padding: 34px;
+        }
+
+        .feqbox:hover {
+            background-color: #414141;
+            color: white;
+        }
+
+        .feqbox {
+            display: flex;
+            justify-content: space-between;
+            background-color: #2d2d2d;
+            font-size: 24px;
+            transition: all 1s ease-out;
+            padding: 24px;
+            max-width: 60vw;
+            margin: 34px auto;
+            cursor: pointer;
+            color: white;
+
+        }
+
+        footer {
+            color: white;
+            max-width: 60vw;
+            margin: auto;
+            padding: 14px;
+        }
+
+        footer .questions {
+
+            padding: 34px 0;
+        }
+
+        .footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            color: white;
+            flex-direction: column;
+        }
+
+        @media screen and (max-width:1300px) {
+            nav {
+                max-width: 90vw;
+            }
+
+            .first {
+                flex-wrap: wrap;
+            }
+
+            .secimg img {
+                width: 180px;
+
+            }
+
+            .secimg video {
+
+                width: 300;
+                top: 18px;
+                width: 203px;
+
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+            }
+
+
+
+
+            .footer {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                color: white;
+                gap: 25px;
+            }
+
+
+            /* .hero> :nth-child(1) {
+
+                font-size: 32px;
+
+            }
+
+            .hero> :nth-child(2) {
+
+                font-size: 18px;
+
+            }
+
+            .hero> :nth-child(3) {
+
+                font-size: 18px;
+
+            }
+
+
+            .footer a {
+                font-size: 14px;
+                color: white;
+            }
+
+            .footer-item {
+                display: flex;
+                flex-direction: column;
+                gap: 23px;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .faq h2 {
+                text-align: center;
+                font-size: 48px;
+            }
+
+            footer {
+                max-width: 90vw;
+            }
+
+            .footer-item {
+                align-items: center;
+            }
+
+            footer table {
+                display: flex;
+                border: 2px solid black;
+            height: 100%;
+            width: 100%;
+
+            }
+            table tr td .dot{
+                margin: 200px;
+            } */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <nav>
+            <img src="Screenshot 2024-03-07 220627.png" alt="">
+            <span>
+                <div>
+                    <button class="btn">English</button>
+                    <button class="btn btn-red-sn">Sign In</button>
+                </div>
+            </span>
+        </nav>
+        <div class="box">
+        </div>
+        <div class="hero">
+            <span>Enjoy big movie, hit series and more from $ 149.</span>
+            <span>Join today. cancel anytime.</span>
+            <span>Ready to watch? Enter your email to create or restart your membership.</span>
+            <div class="hero-buttons">
+                <input type="text" placeholder="Email Address">
+                <button class="btn btn-red">Get Started &gt</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="sepration"></div>
+    <section class="first">
+        <div>
+            <span> Enjoy on your TV</span>
+            <span>Watch on start TVs, Playstation, Xbox,Chromecast, Apple TV, Blu-ray players and more.</span>
+        </div>
+        <div class="secimg">
+            <img src="Screenshot 2024-03-09 001529.png" alt="">
+            <video src="istockphoto-1179170775-640_adpp_is.mp4" autoplay loop muted></video>
+        </div>
+    </section>
+
+
+    <div class="sepration"></div>
+    <section class="first second">
+        <div class="secimg">
+            <img src="Screenshot 2024-03-09 001529.png" alt="">
+            <video src="istock-1163000321_preview.mp4" autoplay muted loop></video>
+        </div>
+        <div>
+            <span> Download your shows to watch offlines</span>
+            <span>Save your favourites easily and always have something to watch.</span>
+        </div>
+    </section>
+    <div class="sepration"></div>
+
+
+    <section class="first third">
+        <div>
+            <span>Watch everywhere</span>
+            <span>Stream unlimited movies and TV shows on your phone,tablets,laptop, and TV.</span>
+        </div>
+        <div class="secimg">
+            <img src="Screenshot 2024-03-09 001529.png" alt="">
+            <video src="istockphoto-181842943-640_adpp_is.mp4" autoplay loop muted></video>
+        </div>
+    </section>
+
+
+    <div class="sepration"></div>
+    <section class="first fourth">
+        <div class="secimg">
+            <img src="Screenshot 2024-03-09 001529.png" alt="">
+            <video src="vecteezy_moving-animated-footage_11396559.mp4" autoplay muted loop></video>
+
+        </div>
+        <div>
+            <span>Create a profiles for kids. </span>
+            <span>Send children on adventures with their favourite characters in a space made just for them-free with
+                your membership.</span>
+        </div>
+    </section>
+    <div class="sepration"></div>
+    <section class="feq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="feqbox">
+            <span>What is Netflix?</span>
+            +
+        </div>
+        <div class="feqbox">
+            <span>How much does Netflix cost?</span>
+            +
+        </div>
+        <div class="feqbox">
+            <span>where can I watch?</span>
+            +
+        </div>
+        <div class="feqbox">
+            <span>How do i cancel?</span>
+            +
+        </div>
+        <div class="feqbox">
+            <span>What can i watch on Netflix?</span>
+            +
+        </div>
+        <div class="feqbox">
+            <span>Is Netflix good for kids?</span>
+            +
+        </div>
+
+        <div class="hero-buttons">
+            <input type="text" placeholder="Email Address">
+            <button class="btn btn-red">Get Started &gt</button>
+        </div>
+
+
+
+
+
+
+
+    </section>
+    <div class="sepration"></div>
+    <footer>
+        <div class="questions">
+            Questions? Call 000-800-919-1694
+        </div>
+      <ul>
+        <li>invester</li>
+        <li>invester</li>
+        <li>invester</li>
+        <li>invester</li>
+    </ul>
+        
+      
+    </footer>
+</body>
+
+</html>
